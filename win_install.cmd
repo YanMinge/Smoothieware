@@ -19,11 +19,11 @@ setlocal
 set ROOTDIR=%~dp0
 set LOGFILE=%ROOTDIR%win_install.log
 set ERRORFILE=%ROOTDIR%win_install.err
-set GCC4ARM_VERSION=gcc-arm-none-eabi-4_8-2014q1
-set GCC4ARM_FILENAME=gcc-arm-none-eabi-4_8-2014q1-20140314-win32.zip
-set GCC4ARM_URL=https://launchpad.net/gcc-arm-embedded/4.8/4.8-2014-q1-update/+download/%GCC4ARM_FILENAME%
+set GCC4ARM_VERSION=gcc-arm-none-eabi-8-2018-q4
+set GCC4ARM_FILENAME=gcc-arm-none-eabi-8-2018-q4-major-win32.zip
+set GCC4ARM_URL=https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/8-2018q4/%GCC4ARM_FILENAME%
 set GCC4ARM_TAR=%ROOTDIR%%GCC4ARM_FILENAME%
-set GCC4ARM_MD5=09c19b3248863074f5498a88f31bee16
+set GCC4ARM_MD5=9b1cfb7539af11b0badfaa960679ea6f
 set GCC4ARM_MD5_FILENAME=%ROOTDIR%gcc-arm-none-eabi.md5
 set GCC4ARM_DIR=%ROOTDIR%gcc-arm-none-eabi
 set GCC4ARM_BINDIR=%GCC4ARM_DIR%\bin
@@ -79,8 +79,8 @@ if errorlevel 1 goto ExitOnError
 call :RunAndLog %OUR_MAKE%
 if errorlevel 1 goto ExitOnError
 
-echo Cleaning up intermediate files...
-call :RunAndLog del /f %GCC4ARM_TAR%
+::echo Cleaning up intermediate files...
+::call :RunAndLog del /f %GCC4ARM_TAR%
 
 echo **************************************************************************
 echo To build gcc4mbed samples, you will first need to run the following batch
